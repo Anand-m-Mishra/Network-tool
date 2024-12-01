@@ -6,7 +6,7 @@ os.makedirs("logs", exist_ok=True)
 
 # Configure logging
 logging.basicConfig(
-    filename="network_monitor.log",  # Log file path
+    filename="logs/network_monitor.log",  # Log file path
     level=logging.INFO,                  
     format="%(asctime)s - %(levelname)s - %(message)s",  # Log message format
     filemode="a"                        
