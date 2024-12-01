@@ -6,10 +6,10 @@ os.makedirs("logs", exist_ok=True)
 
 # Configure logging
 logging.basicConfig(
-    filename="logs/network_monitor.log",  # Log file path
-    level=logging.INFO,                  # Default logging level
+    filename="network_monitor.log",  # Log file path
+    level=logging.INFO,                  
     format="%(asctime)s - %(levelname)s - %(message)s",  # Log message format
-    filemode="a"                         # Append to the log file
+    filemode="a"                        
 )
 
 # Create a console handler to show logs in the terminal
@@ -21,13 +21,7 @@ console_handler.setFormatter(logging.Formatter("%(asctime)s - %(levelname)s - %(
 logging.getLogger().addHandler(console_handler)
 
 def log_action(action, result, level="info"):
-    """
-    Logs an action with its result at the specified logging level.
-    
-    :param action: The action being logged.
-    :param result: The result or details of the action.
-    :param level: The logging level (e.g., 'info', 'error', 'debug').
-    """
+  
     message = f"{action} - {result}"
     
     if level.lower() == "info":
@@ -41,4 +35,4 @@ def log_action(action, result, level="info"):
     elif level.lower() == "critical":
         logging.critical(message)
     else:
-        logging.info(message)  # Default to INFO if an invalid level is provided
+        logging.info(message)  
