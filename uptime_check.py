@@ -11,10 +11,10 @@ def checkWeb(url):
         else:
             result = f"{url} is not working. status_code:{response.status_code}"
             print(result)
-        log_action("Uptime Check", result)
+        log_action("Uptime Check", result,"info")
     except requests.exceptions.RequestException as e:
         result = f"An error occurred: {e}"
         print(result)
-        log_action("Uptime Check", result)
+        log_action("Uptime Check", result,"error")
 
 
